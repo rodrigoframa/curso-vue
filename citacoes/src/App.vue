@@ -5,7 +5,9 @@
 			<button @click="componente = 'Sobre'">Sobre</button>
 
 		</span>
-		<component :is="componente"/>
+		<keep-alive>
+			<component :is="componente"/>
+		</keep-alive>
 	</div>
 </template>
 
@@ -14,6 +16,7 @@ import Citacoes from './components/Citacoes'
 import Sobre from './components/Sobre'
 
 export default {
+	name: 'App',
 	components: { Citacoes, Sobre },
 	data() {
 		return {
